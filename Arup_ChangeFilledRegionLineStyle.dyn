@@ -1,0 +1,529 @@
+{
+  "Uuid": "3f128819-42ce-4636-b48c-f2d1b8190921",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "FilledRegionLineStyle",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "6527ae09-feea-4558-b77e-47b926f4d284",
+      "FunctionType": "Graph",
+      "Id": "df64bd93b823445190809b018175839f",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "da155d4c0bd74cfa81c883ef425194d2",
+          "Name": "_activeViewFilledRegions",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "311c34cb3aa34948a1404828fe63a621",
+          "Name": "_allFilledRegions",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node will query up all Filled Regions in the project as well as those in the active view only. "
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementTypes, DSRevitNodesUI",
+      "SelectedIndex": 158,
+      "SelectedString": "GraphicsStyle",
+      "Id": "89fc347806014125b7992bb2a66f76b7",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ac3a2c9d41734d3abf11f4d52432406d",
+          "Name": "Classes",
+          "Description": "The selected Classes",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All element subclasses."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfType, DSRevitNodesUI",
+      "Id": "816f119b44f543c2bf57423bb37bd0d6",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "65fa4cc8847242a3b22ab4eebfdf6bf9",
+          "Name": "element class",
+          "Description": "An element class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5cd305b3e1744ac0aed103760f1964d3",
+          "Name": "elements",
+          "Description": "All elements in the active document of a given class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All elements in the active document of a given class."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "dddbbf6c-63e8-40c3-975b-1412a230cba4",
+      "FunctionType": "Graph",
+      "Id": "e0dad707ebe447119d7aeac83b8dde90",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2bb8f0c9886a4cdeae23b26a5cd7ab9c",
+          "Name": "filledRegion",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70993caea6c5462abd44331b45c4ebd5",
+          "Name": "lineStyle",
+          "Description": "GraphicsStyle\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5713608ba00c4cbc95253364139014fe",
+          "Name": "FilledRegion",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Longest",
+      "Description": "Change the linestyle of the boundaries of a Filled Region to another given linestyle."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "bc96dee3-a01c-4816-8ef0-3137809d136d",
+      "FunctionType": "Graph",
+      "Id": "eb46d45276624e0088d7c28e6be87cc3",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "dd771cbb0f0246e499dc2139e145827b",
+          "Name": "element",
+          "Description": "Element to filter by name equals\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "94c17f855e75438682bea7f144db7645",
+          "Name": "searchString",
+          "Description": "The string value to filter by\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4247caca0f8f48c19a0333eeb2faf075",
+          "Name": "ignoreCase",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f102b3a5c6714d239b04799810de5c3f",
+          "Name": "Element",
+          "Description": "Filtered element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Filter elements by given name."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "da083d491f4847db9658d0548610540d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5a715f61256b40298c7e30f60eb1b1cc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Z_SketchLines\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "c694b5e5473940a1afdb9c6d4f65d32d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "9278b267210d42ef82aabb4dd5513fff",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "74fc035c905c4259ada8067bf2e11c00",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "a.Name;"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "da155d4c0bd74cfa81c883ef425194d2",
+      "End": "2bb8f0c9886a4cdeae23b26a5cd7ab9c",
+      "Id": "3d817fa3cb604322b5815b4a75cd5372",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ac3a2c9d41734d3abf11f4d52432406d",
+      "End": "65fa4cc8847242a3b22ab4eebfdf6bf9",
+      "Id": "6664a00a2b124a01800874612bfceda5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5cd305b3e1744ac0aed103760f1964d3",
+      "End": "dd771cbb0f0246e499dc2139e145827b",
+      "Id": "79b440aaa809494f9ab4aea0fc3f0eae",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f102b3a5c6714d239b04799810de5c3f",
+      "End": "9278b267210d42ef82aabb4dd5513fff",
+      "Id": "0395240d10474abe9e05839188edcc53",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f102b3a5c6714d239b04799810de5c3f",
+      "End": "70993caea6c5462abd44331b45c4ebd5",
+      "Id": "4fdd1d5c18f34475b298eaa73c2ec72f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5a715f61256b40298c7e30f60eb1b1cc",
+      "End": "94c17f855e75438682bea7f144db7645",
+      "Id": "d625a1fdc9bc46a4930800b007e825cc",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "6527ae09-feea-4558-b77e-47b926f4d284",
+    "dddbbf6c-63e8-40c3-975b-1412a230cba4",
+    "bc96dee3-a01c-4816-8ef0-3137809d136d"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2025.300.1225",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "df64bd93b823445190809b018175839f"
+      ]
+    },
+    {
+      "Name": "Genius Loci",
+      "Version": "2024.5.29",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "e0dad707ebe447119d7aeac83b8dde90",
+        "eb46d45276624e0088d7c28e6be87cc3"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "df64bd93b823445190809b018175839f",
+        "Name": "Get Filled Regions",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 897.198923955087,
+        "Y": 65.679973680436973
+      },
+      {
+        "Id": "89fc347806014125b7992bb2a66f76b7",
+        "Name": "Element Classes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -189.80676242870743,
+        "Y": 175.78593994878406
+      },
+      {
+        "Id": "816f119b44f543c2bf57423bb37bd0d6",
+        "Name": "All Elements of Class",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 75.2477774982076,
+        "Y": 177.77657925104086
+      },
+      {
+        "Id": "e0dad707ebe447119d7aeac83b8dde90",
+        "Name": "FilledRegion LineStyle Change",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1132.1817560236748,
+        "Y": 141.74414024790809
+      },
+      {
+        "Id": "eb46d45276624e0088d7c28e6be87cc3",
+        "Name": "ElementFilter ByName Equals",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 361.27290348810538,
+        "Y": 177.66697647571257
+      },
+      {
+        "Id": "da083d491f4847db9658d0548610540d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 63.026721182715846,
+        "Y": 661.20850132387193
+      },
+      {
+        "Id": "c694b5e5473940a1afdb9c6d4f65d32d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 798.8042432419121,
+        "Y": 604.065580125461
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "1fbbbfea35344967964ee69cc0a0613a",
+        "Title": "Get all linestyles and filter to chosen style",
+        "DescriptionText": "Enter chosen linestyle name in code block below. Should be a string,",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "89fc347806014125b7992bb2a66f76b7",
+          "816f119b44f543c2bf57423bb37bd0d6",
+          "eb46d45276624e0088d7c28e6be87cc3"
+        ],
+        "HasNestedGroups": false,
+        "Left": -199.80676242870743,
+        "Top": 102.78593994878406,
+        "Width": 866.07966591681281,
+        "Height": 271.88103652692848,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 175.78593994878406,
+        "InitialHeight": 228.88103652692848,
+        "TextblockHeight": 63.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "adadb9c3bd354e3da54fcd04eb762221",
+        "Title": "Enter linestyle name as a string",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "da083d491f4847db9658d0548610540d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 53.026721182715846,
+        "Top": 458.20850132387193,
+        "Width": 230.0,
+        "Height": 335.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 661.20850132387193,
+        "InitialHeight": 162.0,
+        "TextblockHeight": 193.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "042bb79f3b5e49ce8f259d2791ed7614",
+        "Title": "Review name of chosen line type",
+        "DescriptionText": "Just to check the filter worked as expected",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c694b5e5473940a1afdb9c6d4f65d32d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 788.8042432419121,
+        "Top": 392.065580125461,
+        "Width": 189.0,
+        "Height": 344.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
+        "InitialTop": 604.065580125461,
+        "InitialHeight": 161.99999999999994,
+        "TextblockHeight": 202.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "86d04bc4e06c42388a659282c2f2bb3c",
+        "Title": "Get filled regions of active view and change the border line style",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "df64bd93b823445190809b018175839f",
+          "e0dad707ebe447119d7aeac83b8dde90"
+        ],
+        "HasNestedGroups": false,
+        "Left": 887.198923955087,
+        "Top": -50.320026319563027,
+        "Width": 554.98283206858775,
+        "Height": 354.06416656747115,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 65.679973680436973,
+        "InitialHeight": 344.23985305049916,
+        "TextblockHeight": 106.0,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "36be62da73784ecba960033f3ae00ba1",
+        "Title": "This graph uses the following packages:\n•  archi-lab.net     2025.300.1225\n•  Genius Loci     2024.5.29\n•  DynamoIronPython2.7    2.4.0",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -75.283857576920525,
+        "Top": -116.52359998091958,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 253.09751207080944,
+    "Y": 159.66566188093381,
+    "Zoom": 0.73265784640038667
+  }
+}
