@@ -1,0 +1,385 @@
+{
+  "Uuid": "0cdc9fb6-9e2e-4edc-a5cd-6f34e8314717",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "ABG_190612_LearnDynamo7-Read",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "20464eda235d4cee902610da25e0ef90",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "36be9754e9084ea499feab340d98bbb0",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Name\",\n\"Number\",\n\"Unbounded height\",\n\"Department\",\n\"Base Finish\",\n\"Ceiling Finish\",\n\"Wall Finish\",\n\"Floor Finish\"];"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "faf1e9bc93c847bab5043fe8047f4006",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9295e0474b074e839eb5f1a491817750",
+          "Name": "filePath",
+          "Description": "File path to the Microsoft Excel spreadsheet\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0908e162d78f4f55ac9d979f0f4ab26b",
+          "Name": "sheetName",
+          "Description": "Name of the workseet to write data to\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0a4362c5da4f4af48cb1a5513b7f2b33",
+          "Name": "startRow",
+          "Description": "Start row for writing data. Enter 0 for Row 1, 1 for Row 2, etc.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc45fbf2e6124ed7bf57be4d76f41a11",
+          "Name": "startColumn",
+          "Description": "Start column for writing data. Enter 0 for Column A, 1 for Column B, etc.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1c55b719cd184fedb9809049cb94a8f2",
+          "Name": "data",
+          "Description": "Data to write to the spreadsheet\n\nvar[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "823a088ac6dc4ac7b4eac35aa9bf3cb7",
+          "Name": "overWrite",
+          "Description": "True to overwrite file, false not to overwrite\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1b395700ea6c455fa6822c0f69e0f482",
+          "Name": "data",
+          "Description": "Data written to the spreadsheet",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSOffice.Data.ExportExcel@string,string,int,int,var[][],bool",
+      "Replication": "Auto",
+      "Description": "Write data to a Microsoft Excel spreadsheet. Data is written by row with sublists to be written in successive rows. Rows and columns are zero-indexed; for example, the value in the data list at [0,0] will be written to cell A1. Null values and empty lists are written to Excel as empty cells. This node requires Microsoft Excel to be installed.\n\nData.ExportExcel (filePath: string, sheetName: string, startRow: int, startColumn: int, data: var[][], overWrite: bool = false): var[][]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5ad3686faf3d441b984dc11024a45bc6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b7572cf293ad4a45bc7ce3142e74e359",
+          "Name": "file",
+          "Description": "File representing the Excel workbook\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "22932d06059a4296a97d91e4320adb3b",
+          "Name": "sheetName",
+          "Description": "Name of the worksheet containing data\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12fd74b0b4ef4ff8a16d61615e90b5dc",
+          "Name": "readAsStrings",
+          "Description": "Toggle to read cells as strings\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a49f879c4fa42a3888ae2b51c65305e",
+          "Name": "showExcel",
+          "Description": "Toggle to show excel's main window\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b1293fbac770495c99d21d3a5d39bca0",
+          "Name": "data",
+          "Description": "Rows of data from the Excel worksheet",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSOffice.Data.ImportExcel@var,string,bool,bool",
+      "Replication": "Auto",
+      "Description": "Read data from a Microsoft Excel spreadsheet. Data is read by row and returned in a series of lists by row. Rows and columns are zero-indexed; for example, the value in cell A1 will appear in the data list at [0,0]. This node requires Microsoft Excel to be installed.\n\nData.ImportExcel (file: var, sheetName: string, readAsStrings: bool = false, showExcel: bool = true): var[][]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "5baec8e37b4145ce9466b8757523c100",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7cb5bfb069eb4420b21d1f7c98bbb1fc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8ce5b1f236f49f49f48085c4d638350",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fb1cef3e8fb74c28b963655ae1033be9",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e20ec319c14f4c6a8e506304a2dfd1dc",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2487ed6ef7be4a2ab6a5e59e5e42366e",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Sheet1\";\n1;\n1;\n\"Some Cell Info\";\ntrue;"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "c8a2599eb39b4a2f8c02c91e2f7cfa95",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b08dc095d22e4016be29f977246135ec",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path",
+      "HintPath": "C:\\Users\\Vince.Bombardiere\\OneDrive - Arup\\RevitStorage\\Dynamo\\From Aussie BIM Guru\\Dynamo_Scripts\\ABG_200309_SharedParams2020a.xlsx",
+      "InputValue": ".\\ABG_200309_SharedParams2020a.xlsx"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "7cb5bfb069eb4420b21d1f7c98bbb1fc",
+      "End": "0908e162d78f4f55ac9d979f0f4ab26b",
+      "Id": "0364271af66c48a59791dd55a44d65be",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f8ce5b1f236f49f49f48085c4d638350",
+      "End": "0a4362c5da4f4af48cb1a5513b7f2b33",
+      "Id": "577aa3ce0db24c89ac251519cefebe2d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fb1cef3e8fb74c28b963655ae1033be9",
+      "End": "cc45fbf2e6124ed7bf57be4d76f41a11",
+      "Id": "cf1cc335e40d4d23aa0dcdc7916eac2b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e20ec319c14f4c6a8e506304a2dfd1dc",
+      "End": "1c55b719cd184fedb9809049cb94a8f2",
+      "Id": "dda04bf237cb433a873e57b176beda69",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2487ed6ef7be4a2ab6a5e59e5e42366e",
+      "End": "823a088ac6dc4ac7b4eac35aa9bf3cb7",
+      "Id": "f05528c6c8b7481283b64b4a5e20fa70",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b08dc095d22e4016be29f977246135ec",
+      "End": "9295e0474b074e839eb5f1a491817750",
+      "Id": "e7080fc979e241949d11429e462a4fcf",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "20464eda235d4cee902610da25e0ef90",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.2319980430735313,
+        "Y": 66.208966484607629
+      },
+      {
+        "Id": "faf1e9bc93c847bab5043fe8047f4006",
+        "Name": "Data.ExportExcel",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 664.96016264493244,
+        "Y": 85.775322661464259
+      },
+      {
+        "Id": "5ad3686faf3d441b984dc11024a45bc6",
+        "Name": "Data.ImportExcel",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 957.33323418720181,
+        "Y": 79.47141792117452
+      },
+      {
+        "Id": "5baec8e37b4145ce9466b8757523c100",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 296.42940827024859,
+        "Y": 472.06221999525718
+      },
+      {
+        "Id": "c8a2599eb39b4a2f8c02c91e2f7cfa95",
+        "Name": "File Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 182.48072528366322,
+        "Y": 321.42192293500443
+      }
+    ],
+    "Annotations": [],
+    "X": 102.98554065477424,
+    "Y": 103.27309131338728,
+    "Zoom": 1.1782858655947872
+  }
+}
